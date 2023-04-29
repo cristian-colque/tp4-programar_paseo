@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+:root {
+	--main-bg-color: #f2e9e1;
+	--alt-bg-color: #f4ede8;
+	--alt-light-bg-color: #faf4ed;
+	--main-text-color: #575279;
+	--alt-text-color: #797593;
+	--alt-text-light-color: #9893a5;
+	--red: #b4637a;
+	--yellow:#ea9d34;
+	--blue: #d7827e;
+	--green: #286983;
+	--teal: #56949f;
+	--cyan: #907aa9;
+}
+
+/* -- Header -- */
+.Encabezado {
+	background-color: var(--alt-bg-color);
+	border: solid var(--main-text-color);
+	box-shadow: 10px 5px 0px var(--teal);
+	color: var(--main-fg-text-color);
+	font-family: 'Pacifico', cursive;
+	font-size: 2em;
+	padding: 2px;
+	text-align: center;
+}
+
+/* -- Body -- */
+body {
+	background-color: var(--main-bg-color);
+}
+
+/* -- tablas servicios de paseos -- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+td:first-child {
+  border-left: none;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+th:first-child {
+  border-left: none;
+}
+
+th:last-child {
+  border-right: none;
+}
+
+/* -- Footer -- */
+.PieDePagina {
+	font-family: 'IBM Plex Serif', serif;
+	color: var(--main-fg-text-color);
+}
