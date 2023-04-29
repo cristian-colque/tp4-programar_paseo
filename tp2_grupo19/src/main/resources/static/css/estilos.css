@@ -262,6 +262,78 @@ footer > .footer-content {
 	margin: 25px 80px 25px 80px; 
 }
 
+/* Catalog */
+/*-- Productos --*/
+#catalog-container {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.5), rgba(250, 244, 237, 0.5)), url("../images/fondo-huellitas.jpg");
+}
+
+#catalog-container .section ul {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgb(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
+	background-size: 50%;
+	border: var(--rose) 3px outset;
+	border-radius: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px;
+}
+
+#catalog-container h2 {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.6), rgba(244, 237, 232, 0.6)), url("../images/fondo-huella-corazon.jpg");
+	background-size: 50%;
+	border: var(--rose) 3px outset;
+	border-radius: 20px;
+	color: var(--iris);
+	font-size: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3px 10px;
+	text-align: center;
+	width: 350px;
+	-webkit-text-stroke: 1.5px var(--cyan);
+}
+
+.collares_y_correas, .alimentos, .productos_de_higiene, .juguetes, .camas {
+	font-size: 1.2em;	
+	text-align: center;
+}
+
+.collares_y_correas h3 {
+	color: var(--foam);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.alimentos h3 {
+	color: var(--gold);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.productos_de_higiene h3 {
+	color: var(--love);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.juguetes h3 {
+	color: var(--teal);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.camas h3 {
+	color: var(--blue);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+/* -- END OF Catalog -- */
+
 footer > .footer-content > p {
 	font-family: var(--ft-fantasy);
 	font-size: 1.5em;
@@ -269,4 +341,3 @@ footer > .footer-content > p {
 	text-decoration: underline;
 }
 /* -- END OF Footer -- */
-
