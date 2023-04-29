@@ -8,6 +8,7 @@
 	--main-bg: #f2e9e1;
 	--alt-bg: #f4ede8;
 	--alt-lighter-bg: #faf4ed;
+	--alt-darker-bg: #dfdad9;
 	--main-fg: #575279;
 	--alt-fg: #797593;
 	--alt-fg-lighter: #9893a5;
@@ -74,7 +75,12 @@ header > .header-content > img {
 
 /* -- Body -- */
 body {
+	min-height: 100vh;
+	margin: 0;
 	background-color: var(--main-bg);
+	display: flex;
+	flex-direction: column;
+	
 }
 
 /* Unvisited link */
@@ -187,6 +193,64 @@ hr {
 /* -- END OF Separator -- */
 
 /* -- END OF Body -- */
+
+/* -- Table -- */
+/* -- Tablas servicios_de_paseos -- */
+
+div.table-container {
+	display: block;
+	text-align: center;
+}
+
+div.table-container h2 {
+	font-family: var(--ft-sans);
+}
+
+div.table-container table {
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--gold);
+  	border-collapse: collapse;
+  	color: var(--main-fg);
+  	display: inline-block;
+  	margin-left: 20px;
+  	margin-right: 20px;
+}
+
+div.table-container th, td {
+	font-family: var(--ft-sans);
+  	text-align: left;
+  	padding: 8px;
+}
+
+div.table-container th {
+  background-color: var(--alt-darker-bg);
+}
+
+div.table-container tr:nth-child(even) {
+  background-color: var(--alt-lighter-bg);
+}
+
+div.table-container tr:hover {
+  background-color: var(--foam);
+}
+
+div.table-container td:first-child {
+  border-left: none;
+}
+
+div.table-container td:last-child {
+  border-right: none;
+}
+
+div.table-container th:first-child {
+  border-left: none;
+}
+
+div.table-container th:last-child {
+  border-right: none;
+}
+/* End of Table */
+
 /* -- Footer -- */
 footer > .footer-content {
 	background-color: var(--rose);
