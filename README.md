@@ -5,12 +5,17 @@
 - Colque Cristian Fernando
 - Perez José Miguel
 
-## Trabajo Práctico Nº 02 - Programación Visual
+## Programación Visual
+### Trabajo Práctico Nº 02 
 
 **Objetivo de aprendizaje:**
 + Control de versión `Git` - `Github`
 + `Maven`
 + Estructura, etiquetas, atributos, formularios en `HTML`
+
+### Trabajo Práctico Nº 03
+**Objetivo de aprendizaje:**
++ Uso de `CSS`
 
 **Notas sobre el Repositorio**
 
