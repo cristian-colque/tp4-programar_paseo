@@ -273,7 +273,7 @@ footer > .footer-content {
 }
 
 #catalog-container h2 {
-	background-image: linear-gradient(rgba(242, 233, 222, 0.6), rgba(244, 237, 232, 0.6)), url("../images/fondo-huella-corazon.jpg");
+	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgba(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
 	background-size: 50%;
 	border: var(--rose) 3px outset;
 	border-radius: 20px;
