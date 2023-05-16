@@ -1,62 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<!-- Importar CSS -->
-	<link rel="stylesheet" href="../static/css/estilos.css">
-	<!-- Webpage Icon & Title -->
-		<link rel="shortcut icon" type="image/svg" href="../static/images/pet-shop.svg">
-	<title>Servicios de Paseos</title>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="UTF-8">
+		<!-- Importar CSS -->
+		<link rel="stylesheet" th:href="@{/css/estilos.css}">
+		<!-- Webpage Icon & Title -->
+		<link rel="shortcut icon" type="image/svg" th:href="@{images/pet-shop.svg}">
+		<title>Servicios de Paseos</title>
 	</head>
 	<body>
 		<!-- Header -->
-		<header>
-			<div class="header-content">
-				<h1>Amamos a las mascotas!</h1>
-				<!-- <img src="../static/images/WeLovePets.jpg" alt="PetShopBanner" title="We love Pets!"> -->
-			</div>
-		</header>
+		<header th:replace="~{layouts/header :: header}"></header>
 		<!-- End of Header -->
-		
-		<!-- Nav -->
-		<nav class="nav">
-			<ul>
-				<li><a href="index.html">Regresar a la pagina principal</a></li>
-			</ul>
-		</nav>
-		<!-- End of Nav -->
-		
+				
 		<!-- Table of Content -->
 		<div class="table-container">
 			<h2>Horarios de los paseadores</h2>
 			<table border="1">
-			    <tr>
-			      <th>Día</th>
-			      <th>Lunes</th>
-			      <th>Martes</th>
-			      <th>Miércoles</th>
-			      <th>Jueves</th>
-			      <th>Viernes</th>
-			      <th>Sábado</th>
+				<tr>
+			    	<th>Día</th>
+			      	<th>Lunes</th>
+			      	<th>Martes</th>
+			      	<th>Miércoles</th>
+			      	<th>Jueves</th>
+			      	<th>Viernes</th>
+			      	<th>Sábado</th>
 			    </tr>
+			    
 			    <tr>
-			      <td><strong>Horario</strong></td>
-			      <td>8:00 am - 10:00 am</td>
-			      <td>3:00 pm - 5:00 pm</td>
-			      <td>10:00 am - 12:00 pm</td>
-			      <td>1:00 pm - 3:00 pm</td>
-			      <td>6:00 pm - 8:00 pm</td>
-			      <td>9:00 am - 11:00 am</td>
+			    	<td><strong>Horario</strong></td>
+			    	<td th:each="paseador: ${paseadores}" th:text="${paseador.horario}"></td>
 			    </tr>
+			    
 			    <tr>
-			      <td><strong>Paseador</strong></td>
-			      <td>Juan Pérez</td>
-			      <td>María Rodríguez</td>
-			      <td>Carlos Gómez</td>
-			      <td>Lucía Hernández</td>
-			      <td>Diego Torres</td>
-			      <td>Ana Martínez</td>
+					<td><strong>Paseador</strong></td>
+				    <td th:each="paseador: ${paseadores}" th:text="${paseador.nombre}"></td>
 			    </tr>
+			    
 			</table>
 		</div>
 		<!-- End of Table of Content -->
@@ -66,11 +47,7 @@
 		<!-- End of Separator -->
 		
 		<!-- Footer -->
-		<footer>
-			<div class="footer-content">
-				<p>Copyright &copy 2023 - Amamos a las mascotas! - Diseñado por Grupo19 - Jujuy - República Argentina</p>
-			</div> 
-		</footer>
+		<footer th:replace="~{layouts/footer :: footer}"></footer>
 		<!-- End of Footer -->
 	</body>
 </html>
