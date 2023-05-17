@@ -1,7 +1,8 @@
 package ar.edu.unju.fi.lists;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+
 import ar.edu.unju.fi.model.Walker;
 
 public class WalkerList {

@@ -25,8 +25,12 @@ public class Walker {
 			) {
 
 			this.nombre = nombre;
-			this.horarioDisponibleDesde = LocalTime.of(horaInicio, minutoInicio);
-			this.horarioDisponibleHasta = LocalTime.of(horaFin, minutoFin);
+			this.horarioDisponibleDesde = LocalTime.of(
+				(byte) horaInicio, (byte) minutoInicio
+			);
+			this.horarioDisponibleHasta = LocalTime.of(
+				(byte) horaFin, (byte) minutoFin
+			);
 		}
 		// endregion
 		

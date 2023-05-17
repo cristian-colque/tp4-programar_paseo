@@ -8,24 +8,27 @@ public class Product {
 	private float precio;
 	private String categoria;
 	private byte descuento;
+	private String imagen;
 	// endregion
 	
 	// region Constructor
-	public Product() {};
+	public Product() {}
 	
 	public Product(
 			String nombre,
-			short codigo,
-			float precio,
+			int codigo,
+			double precio,
 			String categoria,
-			byte descuento
+			int descuento,
+			String imagen
 	) {
 	
 		this.nombre = nombre;
-		this.codigo = codigo;
-		this.precio = precio;
+		this.codigo = (short) codigo;
+		this.precio = (float) precio;
 		this.categoria = categoria;
-		this.descuento = descuento;
+		this.descuento = (byte) descuento;
+		this.imagen = imagen;
 	}
 	// endregion
 		
@@ -69,6 +72,14 @@ public class Product {
 	public void setDescuento(byte descuento) {
 		this.descuento = descuento;
 	}
+
+	public String getImagen() {
+		return imagen;
+	}
+	
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
     // endregion
 	
 	// region Methods
@@ -85,7 +96,7 @@ public class Product {
         }
         
         if (descuento > 0) {
-            resultado = precio - (precio * descuento / 100);
+            resultado = precio - (precio * this.descuento / 100);
         }
 
         return resultado;

@@ -214,6 +214,7 @@ body > .index-container > .aside img {
 }
 
 body > .index-container > .aside p {
+	text-align: center;
 	font-weight: bold;
 	font-size: 1em;
 }
