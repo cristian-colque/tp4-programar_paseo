@@ -1,10 +1,16 @@
 package ar.edu.unju.fi.model;
 
+import java.util.Random;
+
 public class Product {
 	
+	private final static Random random = new Random();
+
 	// region Attributes
 	private String nombre;
-	private short codigo;
+
+	private static short codigo = 0;
+
 	private float precio;
 	private String categoria;
 	private byte descuento;
@@ -16,18 +22,31 @@ public class Product {
 	
 	public Product(
 			String nombre,
-			int codigo,
+			// int codigo,
 			double precio,
 			String categoria,
 			int descuento,
 			String imagen
 	) {
-	
 		this.nombre = nombre;
-		this.codigo = (short) codigo;
+		// this.codigo = (short) codigo;
+		codigo++;
 		this.precio = (float) precio;
 		this.categoria = categoria;
 		this.descuento = (byte) descuento;
+		this.imagen = imagen;
+	}
+
+	public Product(
+			String nombre,
+			String categoria,
+			String imagen
+	) {
+		this.nombre = nombre;
+		codigo++;
+		this.precio = randomPrecio();
+		this.categoria = categoria;
+		this.descuento = randomDescuento();
 		this.imagen = imagen;
 	}
 	// endregion
@@ -56,15 +75,15 @@ public class Product {
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
-	
+
 	public String getCategoria() {
 		return categoria;
 	}
-	
+
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
+
 	public byte getDescuento() {
 		return descuento;
 	}
@@ -76,7 +95,7 @@ public class Product {
 	public String getImagen() {
 		return imagen;
 	}
-	
+
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
@@ -102,5 +121,24 @@ public class Product {
         return resultado;
 
     }
+
+	public static short randomCodigo() {
+		return (short) randomDouble(50);
+	}
+
+	public static float randomPrecio() {
+		return (float) randomDouble(1000);
+	}
+
+	public static byte randomDescuento() {
+		return (byte) randomDouble(50);
+	}
+
+	public static double randomDouble(int bound) {
+		double doubleRandomValue = 0d;
+		doubleRandomValue = random.nextInt(bound) + random.nextDouble();
+		return (double) Math.round(doubleRandomValue * 100d) / 100;
+    }
+
 	// endregion
 }
