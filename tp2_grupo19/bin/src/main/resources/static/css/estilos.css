@@ -1,0 +1,356 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+:root {
+	--main-bg: #f2e9e1;
+	--alt-bg: #f4ede8;
+	--alt-lighter-bg: #faf4ed;
+	--alt-darker-bg: #dfdad9;
+	--main-fg: #575279;
+	--alt-fg: #797593;
+	--alt-fg-lighter: #9893a5;
+	--red: #b4637a;
+	--yellow:#ea9d34;
+	--blue: #d7827e;
+	--green: #286983;
+	--teal: #56949f;
+	--cyan: #907aa9;
+	--love: #eb6f92;
+	--gold: #f6c177;
+	--rose: #ebbcba; 
+	--pine: #31748f;
+	--foam: #9ccfd8;
+	--iris: #c4a7e7;
+	--ft-sans: 'IBM Plex Sans', sans-serif;
+	--ft-serif: 'IBM Plex Serif', serif;
+	--ft-mono: 'IBM Plex Mono', monospace;
+	--ft-fantasy: 'Pacifico', cursive;
+}
+
+/* -- Header -- */
+header {
+	width: auto;
+	align-self: center;
+}
+
+header > .header-content {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.3), rgba(244, 237, 232, 0.3)), url("../images/fondo_mascotas.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--red);
+	color: var(--main-fg);
+	margin: 25px 80px 25px 80px;
+}
+
+header > .header-content > h1 {
+	font-family: var(--ft-fantasy);
+	font-size: 3.5em;
+	text-align: center;
+	text-decoration: underline;
+	padding: 10px;
+}
+/* -- END OF Header -- */
+
+/* -- Nav -- */
+.nav {
+	background-color: var(--alt-bg);
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--gold);
+	margin: 25px 80px 25px 80px;
+}
+.nav a {
+	font-family: var(--ft-sans);
+} 
+.nav li::marker {
+	content: '🌸 ';
+}
+/* -- END OF Nav -- */
+
+/* -- Body -- */
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgb(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
+	display: flex;
+	flex-direction: column;
+}
+/* -- END OF Body -- */
+
+/* HTML content */
+
+.index-container,
+.health-advices-container,
+.branches-container,
+.table-container {
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--gold);
+	background-color: var(--main-bg);
+	margin: 25px 80px 25px 80px;
+}
+
+/*-- END OF HTML-content */
+
+
+/* Unvisited link */
+a:link {
+	color: var(--main-fg);
+}
+/* Visited link */
+a:visited {
+	color: var(--pine);
+}
+/* Mouse over link */
+a:hover {
+	background-color: var(--rose);
+	font-family: var(--ft-mono); 
+}
+/* Selected link */
+a:active {
+	color: var(--red);
+}
+/* -- Section -- */
+
+.section {
+	padding: 10px;
+	font-family: var(--ft-sans);
+}
+
+.section li::marker {
+	content: '🌼 ';
+}
+
+.section h2,h3 {
+	font-family: var(--ft-serif);
+}
+/* -- END OF Section -- */
+
+/* -- Form -- */
+
+.contact-container {
+	align-self: center;
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--gold);
+	background-color: var(--main-bg);
+	margin: 25px 80px 25px 80px;
+	padding: 10px;
+	font-family: var(--ft-sans);
+}
+
+.contact-container li::marker {
+	content: '🌼 ';
+}
+
+form input[type=text], textarea {
+	font-family: var(--ft-sans);
+	font-size: 0.9em;
+	width: 100%;
+	margin-left: 10px 0;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+
+form textarea {
+	resize: none;
+}
+
+form input[type=button] {
+	background-color: var(--rose);
+	border: 1px solid var(--main-fg);
+	border-radius: 4px;
+	color: var(--main-fg);
+	font-size: 0.9em;
+	margin-top: 10px; 
+	padding:5px 5px 5px 5px;
+}
+
+form input[type=button]:hover {
+	background-color: var(--foam);
+}
+/* -- END OF Form -- */
+
+/* -- Aside -- */
+.aside {
+	font-family: var(--ft-serif);
+	margin: 25px 80px 25px 80px;
+	text-align: center;
+}
+
+.aside img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0.9em;
+}
+
+.aside p {
+	font-weight: bold;
+	font-size: 1em;
+}
+/* -- END OF Aside -- */
+
+/* -- Separator -- */
+hr {
+	border: 1px solid var(--alt-fg-lighter);
+	width: 75%;
+}
+/* -- END OF Separator -- */
+
+/* -- Table -- */
+/* -- Tablas servicios_de_paseos -- */
+
+.table-container {
+	padding: 10px;
+}
+
+.table-container h2 {
+	font-family: var(--ft-serif);
+	text-align: center;
+}
+
+.table-container table {
+	border: 1px solid var(--main-fg);
+  	border-collapse: collapse;
+  	color: var(--main-fg);
+  	table-layout: fixed;
+  	width: 100%; 	
+}
+
+.table-container th, td {
+	font-family: var(--ft-sans);
+  	text-align: left;
+  	padding: 8px;
+}
+
+.table-container th {
+  background-color: var(--alt-darker-bg);
+}
+
+.table-container tr:nth-child(even) {
+  background-color: var(--alt-lighter-bg);
+}
+
+.table-container tr:hover {
+  background-color: var(--foam);
+}
+
+.table-container td:first-child {
+  border-left: none;
+}
+
+.table-container td:last-child {
+  border-right: none;
+}
+
+.table-container th:first-child {
+  border-left: none;
+}
+
+.table-container th:last-child {
+  border-right: none;
+}
+/* End of Table */
+
+/* Catalog */
+/*-- Productos --*/
+.catalog-container {
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--rose);
+	background-image: linear-gradient(rgba(242, 233, 222, 0.5), rgba(250, 244, 237, 0.5)), url("../images/fondo-huellitas.jpg");
+	margin: 25px 80px 25px 80px;
+}
+
+.catalog-container h2 {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgba(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
+	background-size: 50%;
+	border: var(--rose) 3px outset;
+	border-radius: 20px;
+	color: var(--iris);
+	font-size: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	text-align: center;
+	width: 350px;
+	-webkit-text-stroke: 1.5px var(--cyan);
+}
+
+.catalog-container .section ul {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgb(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
+	background-size: 50%;
+	border: var(--rose) 3px outset;
+	border-radius: 20px;
+	width: 350px;
+	margin: auto;
+}
+
+.collares_y_correas, .alimentos, .productos_de_higiene, .juguetes, .camas {
+	font-size: 1.2em;	
+	text-align: center;
+}
+
+.collares_y_correas h3 {
+	color: var(--foam);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.alimentos h3 {
+	color: var(--gold);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.productos_de_higiene h3 {
+	color: var(--love);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.juguetes h3 {
+	color: var(--teal);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+
+.camas h3 {
+	color: var(--blue);
+	font-family: var(--ft-serif);
+	font-size: 1.5em;
+	-webkit-text-stroke: 0.8px var(--main-fg);
+}
+/* -- END OF Catalog -- */
+
+/* -- Footer -- */
+footer {
+	width: auto;
+	align-self: center;
+}
+
+footer > .footer-content {
+	background-image: linear-gradient(rgba(242, 233, 222, 0.5), rgba(244, 237, 232, 0.5)), url("../images/fondo_mascotas_1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border: 4px solid var(--main-fg);
+	box-shadow: 10px -10px 0px var(--love);
+	color: var(--main-fg);
+	margin: 25px 80px 25px 80px;	 
+}
+
+footer > .footer-content > p {
+	font-family: var(--ft-fantasy);
+	font-size: 1.5em;
+	text-align: center;
+	text-decoration: underline;
+	padding: 10px;
+}
+/* -- END OF Footer -- */
