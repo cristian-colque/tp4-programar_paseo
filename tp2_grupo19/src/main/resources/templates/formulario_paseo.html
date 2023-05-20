@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta charset="UTF-8">
-	<!-- Importar CSS -->
-	<link rel="stylesheet" th:href="@{/css/estilos.css}">
-	<!-- Webpage Icon & Title -->
-	<link rel="shortcut icon" type="image/svg" th:href="@{/images/pet_shop_favicon.svg}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- Importar CSS -->
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+    <!-- Webpage Icon & Title -->
+    <link rel="shortcut icon" type="image/svg" th:href="@{/images/pet_shop_favicon.svg}">
     <title>Formulario de Paseo</title>
 </head>
 <body>
     <div class="formulario-paseo">
-	    <form action="/paseo" method="post">
-	        <label for="nombre">Nombre de tu Mascota:</label>
-	        <input type="text" id="nombre" name="nombre" required><br><br>
-	        
-	        <label for="altura">Altura:</label>
-	        <input type="number" id="altura" name="altura" required><br><br>
-	        
-	        <label for="peso">Peso:</label>
-	        <input type="number" step="0.01" id="peso" name="peso" required><br><br>
-	        
-	        <label for="edad">Edad:</label>
-	        <input type="number" id="edad" name="edad" required><br><br>
-	        
-	        <input type="submit" value="Programar paseo">
-	    </form>
-	<div/> 
+        <form action="/paseo" method="post">
+            <label for="nombre">Nombre de tu Mascota:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="altura">Altura:</label>
+            <input type="number" id="altura" name="altura" required><br><br>
+
+            <label for="peso">Peso:</label>
+            <input type="number" step="0.01" id="peso" name="peso" required><br><br>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required><br><br>
+
+            <label for="dia">Día de la semana:</label>
+            <select id="dia" name="diaPaseo">
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miércoles">Miércoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+                <option value="sábado">Sábado</option>
+            </select><br><br>
+
+            <label for="horario">Horario:</label>
+            <select id="horario" name="horarioPaseo">
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+            </select><br><br>
+
+            <input type="submit" value="Programar paseo">
+        </form>
+    </div>
 </body>
 </html>
