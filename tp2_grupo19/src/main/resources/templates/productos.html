@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
-		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta charset="UTF-8">
 		<!-- Importar CSS -->
 		<link rel="stylesheet" th:href="@{/css/estilos.css}">
@@ -15,18 +15,18 @@
 		<!-- End of Header -->
 		
 		<!-- Catalog -->
-		<div class="catalog-container">			
+		<div class="catalog-container">
 			<!-- List of products -->
-			<div>
+			<div class="catalog-title-container">
 				<h2>Productos</h2>
-				<div style="text-align: center;">
-					<button><a th:href="@{/productos/nuevo}">Nuevo</a></button>
-				</div>
+				<button class="new-button">
+					<a th:href="@{/productos/nuevo}">Nuevo producto</a>
+				</button>
 			</div>
 			<!-- End of List of products -->
 
 			<!-- Section -->
-			<section id="seccion">
+			<section class="catalog-product-list-container" id="seccion">
 				<ul>
 					<li><a href="#collares_y_correas">Collares y correas</a></li>
 					<li><a href="#alimentos">Alimentos</a></li>
@@ -34,62 +34,46 @@
 					<li><a href="#juguetes">Juguetes</a></li>
 					<li><a href="#camas">Camas</a></li>
 				</ul>
+
 				<!-- Product Items -->
-				<div th:each="categoria: ${listaCategorias}">
-	
-					<h2 style="text-align: center;"
-						th:text="${categoria}">
-					</h2>
-					
-					<div style="
-						display: grid;
-						grid-template-columns: repeat(4, 1fr);
-						grid-template-rows: minmax(100px, auto);
-						gap: 10px;
-						border: 2px solid;
-						padding: 10px;">
+				<div class="product-list-categories" th:each="categoria: ${listaCategorias}">
+
+					<h2 th:text="${categoria}"></h2>
+
+					<div class="product-list-items">
 						
-						<div style="
-							display: grid;
-							grid-template-columns: repeat(2, 1fr);
-							grid-template-rows: minmax(100px, auto);
-							border: 2px solid;"
-							th:each="producto: ${listaProductos}" th:if="${producto.categoria} == ${categoria}">
+						<div class="product-list-items-information"
+							th:each="producto: ${listaProductos}"
+							th:if="${producto.categoria} == ${categoria}">
 							
-							<h3 style="
-								text-align: center;
-								margin: auto;
-								grid-area: 1 / 1 / 2 / 3"
-								th:text="${producto.nombre}"></h3>
+							<h3 th:text="${producto.nombre}"></h3>
+							<img th:src="${producto.imagen}">
+
+							<p class="price-information">Precio: <span th:text="'$' + ${producto.precio}"></span></p>
+							<p class="discount-information">Descuento: <span th:text="${producto.descuento}+'%'"></span></p>
+
+							<button class="edit-button">
+								<a th:href="@{/productos/modificar/} + ${producto.codigo}">Modificar</a>
+							</button>
+							<button class="delete-button">
+								<a th:href="@{/productos/eliminar/} + ${producto.codigo}">Eliminar</a>
+							</button>
 							
-							<img style="
-								grid-area: 2 / 1 / 3 / 3;
-								height: 150px;
-								width: 150px;
-								border: 1px solid;
-								margin: auto;"
-								th:src="${producto.imagen}">
-
-							<p style="grid-area: 3 / 1 / 4 / 3">Precio: <span style="text-align: center;" th:text="${producto.precio}"></span></p>
-							
-							<p style="grid-area: 4 / 1 / 5 / 3">Descuento: <span style="text-align: center;" th:text="${producto.descuento}"></span></p>
-
-							<button><a th:href="@{/productos/modificar/} + ${producto.codigo}">Modificar</a></button>
-							<button><a th:href="@{/productos/eliminar/} + ${producto.codigo}">Eliminar</a></button>
-
 						</div>
+
 					</div>
+
 				</div>
 				<!-- End of Product Items -->
 
 			</section>
 			<!-- End of Section -->
-			<p id="back-to-top"><a href="#seccion"> Volver al índice</a>			
+			<p id="back-to-top"><a href="#seccion"> Volver al índice</a></p>
 		</div>
 		<!-- End of Catalog -->
 		
 		<!-- Separator -->
-			<hr>
+		<hr>
 		<!-- End of Separator -->
 		
 		<!-- Footer -->

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
@@ -28,31 +29,37 @@
 	--ft-serif: 'IBM Plex Serif', serif;
 	--ft-mono: 'IBM Plex Mono', monospace;
 	--ft-fantasy: 'Pacifico', cursive;
+	--ft-fantasy-alt: 'Lobster', cursive;
 }
 
 /* -- Header -- */
 header {
-	grid-row: 1;
-	grid-column: 2;
+	grid-area: 1 / 2 / 2 / 3;
 	margin-top: 10px;
 }
 
-header > .header-content {
+header >
+.header-content {
 	display: grid;
 	border: 4px solid var(--main-fg);
 	box-shadow: 10px -10px 0px var(--red);
 	grid-template-rows: auto auto;
 }
 
-header > .header-content > .header-title {
+header >
+.header-content >
+.header-title {
 	background-image: linear-gradient(rgba(242, 233, 222, 0.3), rgba(244, 237, 232, 0.3)), url("../images/fondo_mascotas.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;
-	grid-row: 1;
+	grid-area: 1 / 1 / 2 / span;
 }
 
-header > .header-content > .header-title > h1 {
+header >
+.header-content >
+.header-title >
+h1 {
 	color: var(--main-fg);
 	font-family: var(--ft-fantasy);
 	font-size: 3.5em;
@@ -62,17 +69,33 @@ header > .header-content > .header-title > h1 {
 }
 
 /* -- Nav -- */
-header > .header-content > .header-navbar {
+header >
+.header-content >
+.header-navbar {
 	border-top: 4px solid var(--main-fg);
 	background-color: var(--alt-bg);
 }
-header > .header-content > .header-navbar > nav {
-	grid-row: 2;
+header >
+.header-content >
+.header-navbar >
+nav {
+	grid-area: 2 / 1 / 3 / span;
 }
-header > .header-content > .header-navbar > nav > ul > li > a {
+
+header >
+.header-content >
+.header-navbar > nav >
+ul >
+li >
+a {
 	font-family: var(--ft-sans);
 } 
-header > .header-content > .header-navbar > nav > ul > li::marker {
+header >
+.header-content >
+.header-navbar >
+nav >
+ul >
+li::marker {
 	content: ' 🌸 ';
 }
 /* -- END OF Nav -- */
@@ -81,9 +104,9 @@ header > .header-content > .header-navbar > nav > ul > li::marker {
 /* -- Body -- */
 body {
 	display: grid;
-	grid-template-rows: auto 1fr auto auto;
-	grid-template-columns: 5em auto 5em;
 	grid-gap: 1em;
+	grid-template-columns: 2em auto 2em;
+	grid-template-rows: auto 1fr auto auto;
 	min-height: 100vh;
 	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgb(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
 }
@@ -96,9 +119,9 @@ body {
 .branches-container,
 .table-container,
 .contact-container,
-.catalog-container {
-	grid-row: 2;
-	grid-column: 2;
+.catalog-container,
+.product-form-container {
+	grid-area: 2 / 2 / 3 / 3;
 	border: 4px solid var(--main-fg);
 	box-shadow: 10px -10px 0px var(--gold);
 	background-color: var(--main-bg);
@@ -143,60 +166,81 @@ a:active {
 }
 
 /* -- Form -- */
-body > .contact-container {
+body >
+.contact-container {
 	display: grid;
-	grid-template-rows: auto auto 1fr;
-	grid-template-columns: 2em auto 2em;
+	grid-template-columns: 2em 1fr 2em;
 }
 
-body > .contact-container > .contact-information-container {
-	grid-column: 2 / 3;
-	grid-row: 1;
+body >
+.contact-container >
+.contact-information-container {
+	grid-area: 1 / 2 / 2 / 3;
 }
 
-body > .contact-container > .contact-information-container > h2, p, h4 {
+body >
+.contact-container >
+.contact-information-container >
+h2, p, h4 {
 	text-align: left;
 }
 
-body > .contact-container > hr {
-	grid-column: 1 / 4;
-	grid-row: 2;
+body >
+.contact-container >
+hr {
+	grid-area: 2 / 1 / 3 / 4;
 }
 
-body > .contact-container > .form-container {
-	grid-row: 3;
-	grid-column: 2;
+body >
+.contact-container >
+.form-container {
+	grid-area: 3 / 2 / 4 / 3;
 }
 
-body > .contact-container li::marker {
+body >
+.contact-container
+li::marker {
 	content: '🌼 ';
 }
 
-body > .contact-container > .form-container input[type=text], textarea {
-	font-family: var(--ft-sans);
-	font-size: 0.9em;
-	width: 100%;
-	margin-left: 10px 0;
-	box-sizing: border-box;
-	padding: 10px 10px;
-}
-
-body > .contact-container > .form-container textarea {
-	resize: none;
-}
-
-body > .contact-container > .form-container input[type=button] {
+body >
+.contact-container >
+.form-container
+input[type=button] {
 	background-color: var(--rose);
 	border: 1px solid var(--main-fg);
 	border-radius: 4px;
 	color: var(--main-fg);
 	font-size: 0.9em;
 	margin-top: 10px; 
-	padding:5px 5px 5px 5px;
+	padding: 5px;
 }
 
-body > .contact-container > .form-container input[type=button]:hover {
+body >
+.contact-container >
+.form-container
+input[type=button]:hover {
 	background-color: var(--foam);
+}
+
+body >
+.contact-container >
+.form-container
+input[type=text], textarea {
+	font-family: var(--ft-sans);
+	font-size: 0.9em;
+	width: 100%;
+	margin-left: 1px;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+
+body >
+.contact-container >
+.form-container >
+form >
+textarea {
+	resize: none;
 }
 /* -- END OF Form -- */
 
@@ -232,9 +276,9 @@ hr {
 /* -- Table -- */
 /* -- Tablas servicios_de_paseos -- */
 
-.table-container {
+/* .table-container {
 	padding: 10px;
-}
+} */
 
 .table-container h2 {
 	font-family: var(--ft-serif);
@@ -286,106 +330,312 @@ hr {
 
 /* Catalog */
 /*-- Productos --*/
-body > .catalog-container {
+body >
+.catalog-container {
 	border: 4px solid var(--main-fg);
 	box-shadow: 10px -10px 0px var(--rose);
 	background-image: linear-gradient(rgba(242, 233, 222, 0.5), rgba(250, 244, 237, 0.5)), url("../images/fondo-huellitas.jpg");
 	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto 1fr auto;
-	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto 1fr auto;
+	grid-gap: 1em;
 }
 
-body > .catalog-container > div > h2 {
-	grid-row: 1;
+body >
+.catalog-container >
+.catalog-title-container {
+	display: grid;
+	/* grid-template-columns: 1fr; */
+	grid-template-rows: minmax(100px, auto);
+}
+
+body >
+.catalog-container
+p {
+	grid-area: 3 / 1 / 4 / span;
+	text-align: center;
+}
+
+body >
+.catalog-container >
+.catalog-title-container >
+h2 {
 	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgba(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
 	background-size: 50%;
-	border: var(--rose) 3px outset;
-	border-radius: 20px;
+	border: var(--cyan) 3px outset;
+	border-radius: 4px;
 	color: var(--iris);
+	font-family: var(--ft-fantasy-alt);
 	font-size: 3em;
+	grid-area: 1 / 1 / 2 / span;
 	text-align: center;
-	width: 350px;
+	text-shadow: var(--cyan) 1px 0 10px;
+	padding: 5px 10px 5px 10px;
 	margin-left: auto;
 	margin-right: auto;
-	-webkit-text-stroke: 1.5px var(--cyan);
+	-webkit-text-stroke: 1.5px var(--main-fg);
 }
 
-body > .catalog-container > section > ul {
+body >
+.catalog-container >
+.catalog-product-list-container {
+	grid-area: 2 / 1 / 3 / 2;
+}
+
+/* Catalog section links */
+body >
+.catalog-container >
+.catalog-product-list-container >
+ul {
 	background-image: linear-gradient(rgba(242, 233, 222, 0.8), rgb(244, 237, 232, 0.8)), url("../images/fondo-huella-corazon.jpg");
 	background-size: 50%;
-	border: var(--rose) 3px outset;
-	border-radius: 20px;
-	width: 350px;
+	border: var(--red) 3px outset;
+	border-radius: 4px;
+	width: 250px;
 	margin-left: auto;
 	margin-right: auto;
+	
 }
 
-body > .catalog-container > section {
-	font-family: var(--ft-sans);
-}
-
-body > .catalog-container > section > ul > li::marker {
+body >
+.catalog-container >
+.catalog-product-list-container >
+ul >
+li::marker {
 	content: '🌼 ';
 }
 
-body > .catalog-container > section > ul > li {
+body >
+.catalog-container >
+.catalog-product-list-container {
+	font-family: var(--ft-sans);
+}
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+ul >
+li {
 	font-family: var(--ft-serif);
 }
+/* End of Catalog section links */
 
-body > .catalog-container > #back-to-top {
-	text-align: center;
-}
-
-body > .catalog-container > section {
-	grid-row: 2;
-}
-
-body > .catalog-container p {
-	grid-row: 3;
-	text-align: center;
-}
-
-.collares_y_correas, .alimentos, .productos_de_higiene, .juguetes, .camas {
-	font-size: 1.2em;	
-	text-align: center;
-}
-
-.collares_y_correas h3 {
+/* 
+ * Catalog category section
+ */
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+h2 {
 	color: var(--foam);
-	font-family: var(--ft-serif);
-	font-size: 1.5em;
-	-webkit-text-stroke: 0.8px var(--main-fg);
+	font-family: var(--ft-fantasy-alt);
+	font-size: 4em;
+	margin: 0.4em 0 0.4em 0;
+	text-align: center;
+	text-shadow: var(--pine) 1px 0 10px;
+	-webkit-text-stroke: 2.0px var(--main-fg);
 }
 
-.alimentos h3 {
-	color: var(--gold);
-	font-family: var(--ft-serif);
-	font-size: 1.5em;
-	-webkit-text-stroke: 0.8px var(--main-fg);
+/*
+ * Catalog items section
+ */
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items {
+	display: grid;
+	background-color: var(--rose);
+	border: 4px solid var(--main-fg);
+	box-shadow: 5px -5px 0px var(--iris);
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: minmax(100px, 1fr);
+	gap: 10px;
+	padding: 10px;
 }
 
-.productos_de_higiene h3 {
-	color: var(--love);
-	font-family: var(--ft-serif);
-	font-size: 1.5em;
-	-webkit-text-stroke: 0.8px var(--main-fg);
+/*
+ * Catalog items information section
+ */
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information {
+	background-color: var(--alt-bg);
+	border: 1px solid var(--alt-fg);
+	border-radius: 4px;
+	display: grid;
+	/* grid-template-columns: repeat(2, 1fr); */
+	grid-template-rows: minmax(100px, auto);
 }
 
-.juguetes h3 {
-	color: var(--teal);
-	font-family: var(--ft-serif);
-	font-size: 1.5em;
-	-webkit-text-stroke: 0.8px var(--main-fg);
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+h3 {
+	text-align: center;
+	margin: auto;
+	grid-area: 1 / 1 / 2 / 3;
 }
 
-.camas h3 {
-	color: var(--blue);
-	font-family: var(--ft-serif);
-	font-size: 1.5em;
-	-webkit-text-stroke: 0.8px var(--main-fg);
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+img {
+	grid-area: 2 / 1 / 3 / 3;
+	height: 150px;
+	width: 150px;
+	border: 1px solid var(--alt-fg);
+	border-radius: 4px;
+	margin-left: auto;
+	margin-right: auto;
 }
-/* -- END OF Catalog -- */
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+p {
+	text-align: center;
+	font-family: var(--ft-sans);
+	font-size: 1.1em;
+}
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+.price-information {
+	grid-area: 3 / 1 / 4 / 3;
+}
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+.discount-information {
+	grid-area: 4 / 1 / 5 / 3;
+}
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+.edit-button {
+	grid-area: 5 / 1 / 6 / 2;	
+}
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+.delete-button {
+	grid-area: 5 / 2 / 6 / 3;
+}
+
+body >
+.catalog-container >
+.catalog-product-list-container >
+.product-list-categories >
+.product-list-items >
+.product-list-items-information >
+.edit-button,
+.delete-button {
+	background-color: var(--alt-darker-bg);
+	border: var(--main-fg) 1px outset;
+	border-radius: 4px;
+	font-family: var(--ft-sans);
+	font-size: 0.9em;
+	height: 40px;
+	margin: 5px;
+	min-width: 100px;
+}
+/* End of Catalog items information section */
+/* End of Catalog items section */
+
+body > .catalog-container > .catalog-title-container > .new-button {
+	background-color: var(--alt-darker-bg);
+	border: var(--main-fg) 1px outset;
+	border-radius: 4px;
+	font-family: var(--ft-sans);
+	font-size: 0.9em;
+	height: 40px;
+	margin: auto;
+	min-width: 150px;
+}
+/* --- End of Catalog --- */
+
+/*
+ * New/Edit/Delete Product Section
+ */
+body >
+.product-form-container {
+	display: grid;
+	grid-template-columns: 2em 1fr 2em;
+	/* grid-template-rows: minmax(100px, auto); */
+}
+
+body >
+.product-form-container >
+p {
+	grid-area: 1 / 2 / 2 / 3;
+	text-align: center;
+}
+
+body >
+.product-form-container >
+h3 {
+	grid-area: 2 / 2 / 3 / 3;
+	text-align: center;
+}
+
+body >
+.product-form-container >
+form {
+	/* border: 2px solid var(--main-fg);
+	box-shadow: 5px -5px 0px var(--blue); */
+	grid-area: 3 / 2 / 4 / 3;
+	/* padding: 5px; */
+}
+
+/* body >
+.product-form-container >
+form > p > label {
+	font-family: var(--ft-serif);
+} */
+
+body >
+.product-form-container
+> form
+input[type=text], input[type=number] {
+	font-family: var(--ft-sans);
+	font-size: 0.9em;
+	width: 100%;
+	margin-left: 1px;
+	box-sizing: border-box;
+	padding: 10px 10px;
+}
+/* -- Enf of New/Edit/Delete Product Section -- */
+
 
 /* Estilos formulario-paseo */
 
@@ -435,8 +685,7 @@ body > .catalog-container p {
 
 /* -- Footer -- */
 footer {
-	grid-row: 4;
-	grid-column: 2;
+	grid-area: 4 / 2 / 5 / 3;
 }
 
 footer > .footer-content {

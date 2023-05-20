@@ -4,13 +4,17 @@ import java.util.Random;
 
 public class Product {
 	
+	// region static Objects
 	private final static Random random = new Random();
+	// endregion
+
+	// region static Variables
+	private static short codigoSerie = -1;
+	// endregion
 
 	// region Attributes
 	private String nombre;
-
-	private static short codigo = 0;
-
+	private short codigo;
 	private float precio;
 	private String categoria;
 	private byte descuento;
@@ -18,19 +22,19 @@ public class Product {
 	// endregion
 	
 	// region Constructor
-	public Product() {}
+	public Product() { }
 	
 	public Product(
 			String nombre,
-			// int codigo,
+			int codigo,
 			double precio,
 			String categoria,
 			int descuento,
 			String imagen
 	) {
+		++codigoSerie;
 		this.nombre = nombre;
-		// this.codigo = (short) codigo;
-		codigo++;
+		this.codigo = codigoSerie;
 		this.precio = (float) precio;
 		this.categoria = categoria;
 		this.descuento = (byte) descuento;
@@ -42,8 +46,9 @@ public class Product {
 			String categoria,
 			String imagen
 	) {
+		++codigoSerie;
 		this.nombre = nombre;
-		codigo++;
+		this.codigo = codigoSerie;
 		this.precio = randomPrecio();
 		this.categoria = categoria;
 		this.descuento = randomDescuento();
@@ -122,10 +127,6 @@ public class Product {
 
     }
 
-	public static short randomCodigo() {
-		return (short) randomDouble(50);
-	}
-
 	public static float randomPrecio() {
 		return (float) randomDouble(1000);
 	}
@@ -141,4 +142,5 @@ public class Product {
     }
 
 	// endregion
+
 }
