@@ -387,6 +387,52 @@ body > .catalog-container p {
 }
 /* -- END OF Catalog -- */
 
+/* Estilos formulario-paseo */
+
+.formulario-paseo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70vh;
+  width: 90vh;
+  margin: 10vh;
+  padding: 00;
+}
+
+.formulario-paseo form {
+  border: 1px solid #ccc;
+  padding: 50px;
+  border-radius: 5px;
+  width: 400px;
+  background-color: #f9f9f9;
+}
+
+.formulario-paseo label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formulario-paseo input[type="text"],
+.formulario-paseo input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formulario-paseo input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* -- END OF Formulario-paseo -- */
+
+
 /* -- Footer -- */
 footer {
 	grid-row: 4;
@@ -413,3 +459,8 @@ footer > .footer-content > p {
 	text-decoration: underline;
 }
 /* -- END OF Footer -- */
+
+
+
+
+
