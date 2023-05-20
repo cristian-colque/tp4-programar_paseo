@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="UTF-8">
+	<!-- Importar CSS -->
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<!-- Webpage Icon & Title -->
+	<link rel="shortcut icon" type="image/svg" th:href="@{/images/pet_shop_favicon.svg}">
+    <title>Formulario de Paseo</title>
+</head>
+<body>
+    <div class="formulario-paseo">
+	    <form action="/paseo" method="post">
+	        <label for="nombre">Nombre de tu Mascota:</label>
+	        <input type="text" id="nombre" name="nombre" required><br><br>
+	        
+	        <label for="altura">Altura:</label>
+	        <input type="number" id="altura" name="altura" required><br><br>
+	        
+	        <label for="peso">Peso:</label>
+	        <input type="number" step="0.01" id="peso" name="peso" required><br><br>
+	        
+	        <label for="edad">Edad:</label>
+	        <input type="number" id="edad" name="edad" required><br><br>
+	        
+	        <input type="submit" value="Programar paseo">
+	    </form>
+	<div/> 
+</body>
+</html>

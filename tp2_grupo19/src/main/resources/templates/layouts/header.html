@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta charset="UTF-8">
+		<!-- Importar CSS -->
+		<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	</head>
+	<body>
+		<!-- Header -->
+		<header th:fragment="header">
+			<div class="header-content">
+				<div class="header-title">
+					<h1>Amamos a las mascotas!</h1>
+				</div>
+				<div class="header-navbar">
+					<nav>
+						<ul>						
+							<li><a th:href="@{/index}">Hogar</a></li>
+							<li><a th:href="@{/productos/listado}">Productos</a></li>
+							<li><a th:href="@{/consejos_de_salud}">Consejos de salud</a></li>
+							<li><a th:href="@{/servicio_de_paseos}">Servicio de paseos</a></li>
+							<li><a th:href="@{/sucursales}">Sucursales</a></li>
+							<li><a th:href="@{/contactanos}">Contáctanos</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- End of header-navbar -->
+			</div>
+			<!-- End of header-content -->
+		</header>
+		<!-- End of Header -->
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta charset="UTF-8">
+		<!-- Importar CSS -->
+		<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	</head>
+	<body>
+		<aside th:fragment="aside" class="aside">
+			<img th:src="@{images/Chicken.png}" title="We give love, we deserve love!"/>
+			<strong>La tenencia de una mascota conlleva una gran responsabilidad y esta penado por ley el maltrato hacia ellos.</strong>
+			<p><a href="https://www.argentina.gob.ar/normativa/nacional/ley-14346-153011/texto"
+				title="PROTECCION DE LOS ANIMALES">Ley de proteccion de los animales</a></p>		
+		</aside>
+	</body>
+</html>
